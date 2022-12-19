@@ -1,15 +1,15 @@
 package praktikum;
 
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 public class BunTest {
-
-    Bun bun_1 = new Bun("black bun", 100);
-    Bun bun_2 = new Bun("", 0);
-    Bun bun_3 = new Bun(null, -1);
-    Bun bun_4 = new Bun("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", 3.4e+38f);
-    Bun bun_5 = new Bun("!@#$%", 3.4e-38f);
+    private Bun bun_1 = new Bun("black bun", 100);
+    private Bun bun_2 = new Bun("", 0);
+    private Bun bun_3 = new Bun(null, -1);
+    private Bun bun_4 = new Bun("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", 3.4e+38f);
+    private Bun bun_5 = new Bun("!@#$%", 3.4e-38f);
 
     @Test
     public void shouldGetNameFirstBun() {
@@ -54,7 +54,7 @@ public class BunTest {
 
     @Test
     public void shouldGetNameFourthBun() {
-        String expected ="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+        String expected = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
         String actual = bun_4.getName();
         assertEquals("Name bun is incorrect", expected, actual);
     }
@@ -68,7 +68,7 @@ public class BunTest {
 
     @Test
     public void shouldGetNameFifthBun() {
-        String expected ="!@#$%";
+        String expected = "!@#$%";
         String actual = bun_5.getName();
         assertEquals("Name bun is incorrect", expected, actual);
     }

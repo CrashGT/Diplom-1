@@ -1,9 +1,9 @@
 package praktikum;
 
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.mockito.Mock;
 
 import java.util.List;
 
@@ -11,11 +11,14 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class BurgerParameterizedTest {
-
-    private final int bunIndex;
-    private final int ingredientFirstIndexIndex;
-    private final int ingredientSecondIndex;
-    private final String receipt;
+    @Mock
+    private int bunIndex;
+    @Mock
+    private int ingredientFirstIndexIndex;
+    @Mock
+    private String receipt;
+    @Mock
+    private int ingredientSecondIndex;
 
     public BurgerParameterizedTest(int bunIndex, int ingredientFirstIndexIndex, int ingredientSecondIndex, String receipt) {
         this.bunIndex = bunIndex;
@@ -39,15 +42,11 @@ public class BurgerParameterizedTest {
         List<Bun> buns = database.availableBuns();
         List<Ingredient> ingredients = database.availableIngredients();
         Burger burger = new Burger();
-
         burger.setBuns(buns.get(bunIndex));
-
         burger.addIngredient(ingredients.get(ingredientFirstIndexIndex));
         burger.addIngredient(ingredients.get(ingredientSecondIndex));
-
         String actualReceipt = burger.getReceipt();
         String expectedReceipt = receipt;
         assertEquals("Receipt food is incorrect", expectedReceipt, actualReceipt);
     }
-
 }
